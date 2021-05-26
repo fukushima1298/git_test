@@ -8,8 +8,13 @@ jobs:
       - uses: actions/setup-node@v1
       - run: npm install -g bats
       - run: bats -v
-  check-uname:
+  check-uname1:
     runs-on: ubuntu-latest
+    steps:
+      - run: uname -a
+      - run: cat /etc/os-release
+  check-uname2:
+    runs-on: ubuntu-18.04
     steps:
       - run: uname -a
       - run: cat /etc/os-release
