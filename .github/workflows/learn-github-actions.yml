@@ -9,6 +9,7 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
   check-uname1:
+    name: 実行テスト
     runs-on: ubuntu-latest
     steps:
       - run: uname -a
@@ -24,6 +25,15 @@ jobs:
           chmod u+x ./.github/scripts/dayprint.sh
           ./.github/scripts/dayprint.sh
         shell: bash
+      - name: 成果物をファイルに出力（次タスクの前処理）
+        shell: bash
+        run: expr 1 + 1 > output.log
+      - name: 成果物をアップロードする
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-log-file
+          path: output.log
+          
   check-uname2:
     runs-on: ubuntu-18.04
     steps:
