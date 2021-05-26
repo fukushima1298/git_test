@@ -19,13 +19,10 @@ jobs:
           ENVINPUT: This is Input Strings.
       - name: ファイルをランナーに持っていく
         uses: actions/checkout@v2
-      - name: test
+      - name: スクリプトの実行テスト(実行権限付与)(checkoutが必須)
         run: |
-          ls -l ./.github/scripts/dayprint.sh
           chmod u+x ./.github/scripts/dayprint.sh
-          ls -l ./.github/scripts/dayprint.sh
-      - name: スクリプトの実行テスト(checkoutが必須)
-        run: ./.github/scripts/dayprint.sh
+          ./.github/scripts/dayprint.sh
         shell: bash
   check-uname2:
     runs-on: ubuntu-18.04
