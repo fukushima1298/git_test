@@ -13,6 +13,10 @@ jobs:
     steps:
       - run: uname -a
       - run: cat /etc/os-release
+      - name: 環境変数のテスト
+        run: echo $ENVINPUT
+        env:
+          ENVINPUT: This is Input Strings.
   check-uname2:
     runs-on: ubuntu-18.04
     steps:
