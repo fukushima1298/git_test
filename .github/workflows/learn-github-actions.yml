@@ -39,3 +39,17 @@ jobs:
     steps:
       - run: uname -a
       - run: cat /etc/os-release
+  job2:
+    name: 実行テスト２
+    runs-on: utuntu-latest
+    needs: check-uname1
+    steps:
+      - name: 成果物をダウンロードする(別ジョブで作成されたもの)
+        uses: actions/download-artifact@v2
+        with:
+          name: output-log-file
+      - name: 成果物を表示
+        run: |
+          ls -l
+          cat output.log
+    
