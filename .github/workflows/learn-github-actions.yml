@@ -17,6 +17,9 @@ jobs:
         run: echo $ENVINPUT
         env:
           ENVINPUT: This is Input Strings.
+      - name: スクリプトの実行テスト
+        run: ./.github/scripts/dayprint.sh
+        shell: bash
   check-uname2:
     runs-on: ubuntu-18.04
     steps:
