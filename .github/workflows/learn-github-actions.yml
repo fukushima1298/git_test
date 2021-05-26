@@ -17,7 +17,9 @@ jobs:
         run: echo $ENVINPUT
         env:
           ENVINPUT: This is Input Strings.
-      - name: スクリプトの実行テスト
+      - name: ファイルをランナーに持っていく
+        uses: actions/checkout@v2
+      - name: スクリプトの実行テスト(checkoutが必須)
         run: ./.github/scripts/dayprint.sh
         shell: bash
   check-uname2:
