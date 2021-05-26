@@ -13,7 +13,7 @@ jobs:
     steps:
       - run: uname -a
       - run: cat /etc/os-release
-      - name: 環境変数のテスト
+      - name: 変数受け渡しのテスト
         run: echo $ENVINPUT
         env:
           ENVINPUT: This is Input Strings.
