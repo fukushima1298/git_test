@@ -41,7 +41,7 @@ jobs:
       - run: cat /etc/os-release
   job2:
     name: 実行テスト２
-    runs-on: utuntu-latest
+    runs-on: ubuntu-latest
     needs: check-uname1
     steps:
       - name: 成果物をダウンロードする(別ジョブで作成されたもの)
